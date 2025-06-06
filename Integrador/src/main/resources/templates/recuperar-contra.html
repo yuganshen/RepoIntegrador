@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="estilos-recuperar-contra.css" />
+    <script
+      src="https://kit.fontawesome.com/da157044bb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="contenedor-recuperar">
+      <div class="recuperar">
+        <h1>Recuperar contraseña</h1>
+        <p>Introduce tu nueva contraseña y repítela.</p>
+        <hr />
+        <form id="form-recuperar">
+          <div class="contra">
+            <label class="espacio">Nueva contraseña:</label>
+            <input
+              type="password"
+              placeholder="Ingresa tu nueva contraseña"
+              required
+            />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="contra">
+            <label class="espacio">Repite la contraseña:</label>
+            <input
+              type="password"
+              placeholder="Repite tu nueva contraseña"
+              required
+            />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="boton">
+            <input type="submit" value="Cambiar" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("form-recuperar")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Evita que el formulario se envíe
+
+          alert("¡Se cambió la contraseña con éxito!");
+
+          // Redirige después de un pequeño retraso
+          setTimeout(function () {
+            window.location.href = "login.html";
+          }, 1000); // 1000 milisegundos = 1 segundo
+        });
+    </script>
+  </body>
+</html>
