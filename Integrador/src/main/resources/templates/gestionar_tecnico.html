@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestionar Técnico</title>
+    <link rel="stylesheet" href="gestionar_tecnico.css" />
+  </head>
+  <body>
+    <h1>GESTIONAR TÉCNICO</h1>
+
+    <div class="form-container">
+      <form id="form-tecnico">
+        <div class="form-group">
+          <label>ID <input type="text" value="T001" readonly /></label>
+          <label>Nombre <input type="text" value="Carlos" readonly /></label>
+          <label>Apellido <input type="text" value="García" readonly /></label>
+          <label
+            >Especialidad <input type="text" value="Electricidad" readonly
+          /></label>
+          <label
+            >Teléfono <input type="text" value="987654321" readonly
+          /></label>
+          <label
+            >Email <input type="email" value="carlos@gmail.com" readonly
+          /></label>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="return false;">AGREGAR</button>
+          <button type="button" onclick="return false;">MODIFICAR</button>
+          <button type="button" onclick="return false;">ELIMINAR</button>
+        </div>
+      </form>
+    </div>
+
+    <table id="tabla-tecnicos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Especialidad</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>T001</td>
+          <td>Carlos</td>
+          <td>García</td>
+          <td>Electricidad</td>
+          <td>987654321</td>
+          <td>carlos@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T002</td>
+          <td>María</td>
+          <td>López</td>
+          <td>Mecánica</td>
+          <td>912345678</td>
+          <td>maria.lopez@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T003</td>
+          <td>José</td>
+          <td>Ramos</td>
+          <td>Soldadura</td>
+          <td>956789123</td>
+          <td>jose.ramos@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T004</td>
+          <td>Lucía</td>
+          <td>Fernández</td>
+          <td>Electrónica</td>
+          <td>923456789</td>
+          <td>lucia.fernandez@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T005</td>
+          <td>Pedro</td>
+          <td>Castillo</td>
+          <td>Plomería</td>
+          <td>998877665</td>
+          <td>pedro.castillo@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T006</td>
+          <td>Laura</td>
+          <td>Quispe</td>
+          <td>Mecatrónica</td>
+          <td>976543210</td>
+          <td>laura.quispe@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T007</td>
+          <td>Andrés</td>
+          <td>Torres</td>
+          <td>HVAC</td>
+          <td>945612378</td>
+          <td>andres.torres@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T008</td>
+          <td>Elena</td>
+          <td>Mendoza</td>
+          <td>Construcción</td>
+          <td>934567890</td>
+          <td>elena.mendoza@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T009</td>
+          <td>David</td>
+          <td>Chávez</td>
+          <td>Pintura</td>
+          <td>967895432</td>
+          <td>david.chavez@gmail.com</td>
+        </tr>
+        <tr>
+          <td>T010</td>
+          <td>Sofía</td>
+          <td>Martínez</td>
+          <td>Electromecánica</td>
+          <td>986543219</td>
+          <td>sofia.martinez@gmail.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

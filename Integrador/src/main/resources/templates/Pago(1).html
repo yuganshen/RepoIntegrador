@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Pago - FERRELUIS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="pago(1).css" />
+  </head>
+  <body>
+    <main>
+      <h2>REGISTRO DE PAGO</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID Pago</th>
+            <th>Cliente</th>
+            <th>Maquinaria ID</th>
+            <th>Fecha de Registro</th>
+            <th>Tipo de Mantenimiento</th>
+            <th>Subtotal</th>
+            <th>IGV</th>
+            <th>Total a Pagar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Juan Pérez</td>
+            <td>CAT 320D</td>
+            <td>05/04/2025</td>
+            <td>Predictivo</td>
+            <td>800$</td>
+            <td>144$</td>
+            <td>944$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section class="form-section">
+        <form id="form-pago" action="pagar" method="get">
+          <h2>MÉTODO DE PAGO</h2>
+
+          <label for="metodo-pago">Método de pago</label>
+          <select id="metodo-pago" name="metodo-pago">
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta</option>
+          </select>
+
+          <label for="comprobante">Comprobante de pago</label>
+          <select id="comprobante" name="comprobante">
+            <option value="boleta">Boleta</option>
+            <option value="factura">Factura</option>
+          </select>
+
+          <button type="submit" class="btn-submit">Pagar</button>
+        </form>
+      </section>
+    </main>
+
+    <script>
+
+    </script>
+  </body>
+</html>
