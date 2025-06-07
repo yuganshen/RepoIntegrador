@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link rel="stylesheet" href="estilosMantenimiento.css" type="text/css">
+</head>
+<body>
+    
+
+<h1>SELECCIONE EL TIPO DE MANTENIMIENTO</h1>
+
+<div class="mantenimientos-container">
+    <div class="fila-superior">
+
+        <div>
+            <h4 class="subtitulo">MANTENIMIENTO PREVENTIVO</h4>
+            <div class="mantenimiento-box">
+                <div class="postSub">Descripción del plan de mantenimiento: <span class="duracion">(1 día)</span></div>
+                <p>Se basa en la monitorización continua del estado de los equipos para optimizar su rendimiento y vida útil. Incluye plan de revisión y reparación de sistemas eléctricos, hidráulicos, motor, transmisión, 
+                reparación de chasis y cambio de carrilería.</p>
+                <div class="precio">200$</div>
+            </div>
+            
+<!-- Para el boton on/off switch-->
+<div class="switch-container">
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+    <span class="switch-label"></span>
+</div>
+        </div>
+
+        <div>
+            <h4 class="subtitulo">MANTENIMIENTO CORRECTIVO</h4>
+            <div class="mantenimiento-box">
+                <div class="postSub">Descripción del plan de mantenimiento: <span class="duracion">(2 días)</span></div>
+                <p> Es un conjunto de acciones técnicas que se realizan para reparar o sustituir equipos que han fallado. 
+                    También se le conoce como mantenimiento reactivo o mantenimiento por avería.</p>
+                <div class="precio">400$</div>
+            </div>
+            
+<!-- Para el boton on/off switch-->
+<div class="switch-container">
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+    <span class="switch-label"></span>
+</div>
+        </div>
+
+    </div>
+
+    <div class="fila-inferior">
+        <div>
+            <h4 class="subtitulo">MANTENIMIENTO PREDICTIVO</h4>
+            <div class="mantenimiento-box">
+                <div class="postSub">Descripción del plan de mantenimiento: <span class="duracion">(1 día)</span></div>
+                <p>Es una técnica que utiliza datos para predecir cuándo fallarán los equipos y así programar las reparaciones. 
+                    El objetivo es evitar averías, reducir costos y aumentar la disponibilidad de los equipos.</p>
+                <div class="precio">300$</div>
+            </div>
+            
+<!-- Para el boton on/off switch-->
+<div class="switch-container">
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+    <span class="switch-label"></span>
+</div>
+        </div>
+    </div>
+</div>
+
+<!--Botón siguiente-->
+<div class="boton-central">
+    <button id="btn-siguiente" disabled>SIGUIENTE</button>
+</div>
+
+<!--Modal-->
+<div id="modal" class="modal">
+  <form class="modal-content" action="fecha-seleccionada" method="get">
+    <span class="close">&times;</span>
+    <h2>SELECCIONE LA FECHA DEL MANTENIMIENTO</h2>
+    <div class="fecha-linea">
+      <label>Fecha Actual:</label>
+      <span id="fecha-actual"></span>
+    </div>
+    <div class="fecha-linea">
+      <label for="fecha-salida">Fecha de Salida:</label>
+      <input type="date" id="fecha-salida">
+    </div>
+    <div class="boton-modal">
+      <a href="SelecTecnico.html"><button class="cerrar-modal" disabled>Aceptar</button></a>
+    </div>
+  </form>
+ 
+</div>
+
+
+    <script>
+  //Funcionalidad del botón siguiente
+ // Obtener todos los switches (checkboxes)
+ const switches = document.querySelectorAll('.switch input[type="checkbox"]');
+ const btnSiguiente = document.getElementById("btn-siguiente");
+
+ // Función para revisar si al menos uno está activo
+ function verificarSwitches() {
+     const algunoActivo = Array.from(switches).some(sw => sw.checked);
+     btnSiguiente.disabled = !algunoActivo;
+ }
+
+ // Añadir listener a cada switch
+ switches.forEach(sw => {
+     sw.addEventListener("change", verificarSwitches);
+ });
+
+ // Mostrar el modal
+     document.querySelector(".boton-central button").addEventListener("click", function() {
+         document.getElementById("modal").style.display = "block";
+         // Mostrar la fecha actual
+         const hoy = new Date();
+         const formato = hoy.toLocaleDateString("es-ES", {
+             day: '2-digit',
+             month: '2-digit',
+             year: 'numeric'
+         });
+         document.getElementById("fecha-actual").textContent = formato;
+     });
+
+     // Cerrar el modal con la X
+     document.querySelector(".close").addEventListener("click", function() {
+         document.getElementById("modal").style.display = "none";
+     });
+
+     // Cerrar el modal si haces clic fuera del contenido
+     window.addEventListener("click", function(event) {
+         const modal = document.getElementById("modal");
+         if (event.target === modal) {
+             modal.style.display = "none";
+         }
+     });
+
+
+     /*Condicional del funcionamiento del botón*/
+     // Obtener elementos
+ const fechaInput = document.getElementById("fecha-salida");
+ const aceptarBtn = document.querySelector(".cerrar-modal");
+
+ // Habilitar el botón solo si hay fecha seleccionada
+ fechaInput.addEventListener("input", function() {
+     aceptarBtn.disabled = !fechaInput.value;
+ });
+
+    
+    </script>
+</body>
+</html>
