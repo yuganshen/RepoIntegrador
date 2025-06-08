@@ -1,5 +1,4 @@
-package com.example.demInte;
-
+package com.example.Integrador;
 public class MantenimientoCorrectivo implements Mantenimiento {
     @Override
     public String getDescripcion() {
