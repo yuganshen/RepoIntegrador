@@ -17,7 +17,7 @@
         <h1>Recuperar contraseña</h1>
         <p>Introduce tu nueva contraseña y repítela.</p>
         <hr />
-        <form id="form-recuperar">
+        <form id="form-recuperar" action="/actualizar-contraseña" method="post">
           <div class="contra">
             <label class="espacio">Nueva contraseña:</label>
             <input
@@ -43,19 +43,6 @@
       </div>
     </div>
 
-    <script>
-      document
-        .getElementById("form-recuperar")
-        .addEventListener("submit", function (e) {
-          e.preventDefault(); // Evita que el formulario se envíe
-
-          alert("¡Se cambió la contraseña con éxito!");
-
-          // Redirige después de un pequeño retraso
-          setTimeout(function () {
-            window.location.href = "login.html";
-          }, 1000); // 1000 milisegundos = 1 segundo
-        });
-    </script>
   </body>
 </html>
+
