@@ -1,5 +1,4 @@
-package com.example.demInte;
-
+package com.example.Integrador;
 public class DtoTecnico {
     private String id;
     private String nombre;
