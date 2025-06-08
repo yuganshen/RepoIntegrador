@@ -1,4 +1,4 @@
-package com.example.demInte;
+package com.example.Integrador;
 
 public class UsuarioFactory {
 
