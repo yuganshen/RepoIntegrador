@@ -1,5 +1,4 @@
-package com.example.demInte;
-
+package com.example.Integrador;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
