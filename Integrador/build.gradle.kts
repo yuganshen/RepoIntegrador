@@ -20,6 +20,10 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	runtimeOnly ("org.postgresql:postgresql")
+	runtimeOnly ("com.h2database:h2")
+	implementation("org.apache.poi:poi-ooxml:5.2.3")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
