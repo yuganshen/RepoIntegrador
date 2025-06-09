@@ -94,8 +94,10 @@ public class controller {
 
 	    return "Login"; // Vista por defecto si el tipo no es válido
 	}
-	 @PostMapping("/registrar")
-	    public String registrarDatos(DTOMaquinaria maquinaria) {
+	  @PostMapping("/registrar")
+	public String registrarDatos(@ModelAttribute DTOMaquinaria maquinaria) {
+	    try {
+	        // Imprimir en consola (opcional)
 	        System.out.println("Nombre: " + maquinaria.getNombre());
 	        System.out.println("Apellido: " + maquinaria.getApellido());
 	        System.out.println("Celular: " + maquinaria.getNumeroCelular());
@@ -110,8 +112,31 @@ public class controller {
 	        System.out.println("Horas: " + maquinaria.getHorasOperación());
 	        System.out.println("Kilometraje: " + maquinaria.getKilometraje());
 
-	        return "SelectMantenimiento"; // nombre de la vista (archivo .html o .jsp)
+	        // Registrar en el archivo de log con todos los campos
+	        LoggerHelper.logInfo(
+	            "Registro de maquinaria:\n" +
+	            "Nombre: " + maquinaria.getNombre() + "\n" +
+	            "Apellido: " + maquinaria.getApellido() + "\n" +
+	            "Celular: " + maquinaria.getNumeroCelular() + "\n" +
+	            "Correo: " + maquinaria.getGmail() + "\n" +
+	            "ID Maquinaria: " + maquinaria.getIDMaquinaria() + "\n" +
+	            "Marca: " + maquinaria.getMarca() + "\n" +
+	            "Modelo: " + maquinaria.getModelo() + "\n" +
+	            "Número de Serie: " + maquinaria.getNumeroSerie() + "\n" +
+	            "Tipo Maquinaria: " + maquinaria.getTipoMaquinaria() + "\n" +
+	            "Año de Fabricación: " + maquinaria.getAnioFabricacion() + "\n" +
+	            "Número de Motor: " + maquinaria.getNumeroMotor() + "\n" +
+	            "Horas de Operación: " + maquinaria.getHorasOperación() + "\n" +
+	            "Kilometraje: " + maquinaria.getKilometraje()
+	        );
+
+	        return "SelectMantenimiento";
+	    } catch (Exception e) {
+	        // Ignorar errores, pero registrar por si acaso
+	        LoggerHelper.logError("Error inesperado al registrar maquinaria", e);
+	        return "ErrorPage";
 	    }
+	}
 	//navegacion
 	@GetMapping("/fecha-seleccionada")
 	public String fechaSeleccionada() {
