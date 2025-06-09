@@ -1,10 +1,14 @@
 package com.example.Integrador;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import jakarta.servlet.http.HttpSession;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,7 +98,7 @@ public class controller {
 
 	    return "Login"; // Vista por defecto si el tipo no es válido
 	}
-	  @PostMapping("/registrar")
+	 @PostMapping("/registrar")
 	public String registrarDatos(@ModelAttribute DTOMaquinaria maquinaria) {
 	    try {
 	        // Imprimir en consola (opcional)
@@ -190,10 +194,19 @@ public class controller {
 
   	    return "gestionar_tecnico";
   	}
-	
-	
-	
-	
-	
+  	@Controller
+  	public class TecnicoController {
+
+  	    @PostMapping("/tecnico-seleccionado")
+  	    public String recibirTecnicoSeleccionado(@ModelAttribute DtoTecnico tecnicoSeleccionado,
+  	                                             HttpSession session) {
+  	        // Guardamos el técnico seleccionado en sesión
+  	    	System.out.println(tecnicoSeleccionado.getNombre());
+  	        session.setAttribute("tecnicoSeleccionado", tecnicoSeleccionado);
+
+  	        // Redireccionar a la siguiente vista que quieras mostrar
+  	        return "Pago(1)"; // cámbialo por la ruta real
+  	    }
+  	}
 	
 }
